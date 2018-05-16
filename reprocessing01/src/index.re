@@ -31,16 +31,6 @@ let drawTiledThing = ({image}, ~texPos, ~texWidth, ~texHeight, ~xOffset, ~y, ~he
     ~texHeight,
     env
   );
-  Draw.subImage(
-    image,
-    ~pos=(int_of_float(-. xOffset) mod width + width, int_of_float(y)),
-    ~width,
-    ~height,
-    ~texPos,
-    ~texWidth,
-    ~texHeight,
-    env
-  )
 };
 
 let draw = ({image, running} as state, env) => {
@@ -49,10 +39,32 @@ let draw = ({image, running} as state, env) => {
     ~texPos=(0, 0),
     ~texWidth=144,
     ~texHeight=256,
-    ~xOffset=xOffset /. 2.,
+    ~xOffset=20. /. 2.,
     ~y=0.,
     ~height=Env.height(env),
     env
   );
+  state
+  /* switch running {
+    | Running => {
+        ...state,
+        image
+      }
+    | Dead => {
+        ...state,
+        image
+      }
+    | Restart =>
+      if (Env.keyPressed(Space, env)) {
+        {
+          ...state,
+          image
+          running: Running,
+        }
+      } else {
+        state
+      }
+  } */
+};
 
 run(~setup, ~draw, ());
