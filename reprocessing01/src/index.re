@@ -5,7 +5,7 @@ type stateT = {
 };
 
 let setup = (env) => {
-  Env.size(~width=800, ~height=600, env);
+  /* Env.size(~width=800, ~height=600, env); */
   let image = Draw.loadImage(
     ~filename="assets/Wave_pattern_by_inkelv1122_on_flickr_800w.jpg", 
     ~isPixel=false, env);
