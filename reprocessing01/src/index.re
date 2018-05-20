@@ -19,7 +19,7 @@ let draw = ({image} as state, env) => {
   Draw.image(
     image,
     ~pos=(0,0),
-    ~width=Env.width(env),
+     ~width=Env.width(env),
     ~height=Env.height(env),
     env
   );
