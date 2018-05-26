@@ -1,5 +1,5 @@
 {
-  "name": "reprocessing-01",
+  "name": "reprocessing-02",
   "scripts": {
     "start": "./lib/bs/bytecode/indexhot.byte",
     "start:native": "./lib/bs/native/index.native",

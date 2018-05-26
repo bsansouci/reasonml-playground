@@ -1,5 +1,4 @@
 {
-  "name": "reprocessing-example",
   "sources": "src",
   "bs-dependencies": [
     "Reprocessing"
