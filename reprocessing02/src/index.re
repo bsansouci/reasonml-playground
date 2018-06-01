@@ -1,32 +1,26 @@
 open Reprocessing;
 
- type runningT =
-   | Running
-   | Dead
-   | Restart;
-
  type pieceT = {
    key: string,
    row: int,
    col: int,
-   cellSize: int,
+   cellSize: int
  };
 
  type loadedImageT = {
    image: imageT,
    width: int,
-   height: int,
+   height: int
  };
 
  type imageTileT = {
    piece: pieceT,
-   image: loadedImageT,
+   image: loadedImageT
  }; 
 
  type stateT = {
-   running: runningT,
      pieces: array(imageTileT),
-     image: imageT,
+     image: imageT
 };
 
 let getPuzzlePieceId = (row: int, col: int, cellSize: int) : string => {
@@ -52,7 +46,7 @@ let setup = env => {
     Draw.loadImage(
       ~filename="assets/Wave_pattern_by_inkelv1122_on_flickr_800w.jpg",
       ~isPixel=false,
-      env,
+      env
     );
     let imgWidth =
     switch (image.glData) {
@@ -72,7 +66,7 @@ let setup = env => {
   };
   let imageTiles: array(imageTileT) =
     getPiecesArray(60, 80, 10) |> Array.map(getImgTile);
-  {running: Running, pieces: imageTiles, image}; 
+  {pieces: imageTiles, image}; 
 };
 
 drawImgTile = (tile: imageTileT, env) => {
