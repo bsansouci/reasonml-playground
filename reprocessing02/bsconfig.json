@@ -2,7 +2,7 @@
   "name": "reprocessing02",
   "sources": "src",
   "bs-dependencies": [
-    "Reprocessing"
+    "reprocessing"
   ],
   "entries": [
     {
